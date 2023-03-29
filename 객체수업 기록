@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+<script>
+  //객체(1/3); 객체의 문법: 인덱스에 숫자가 아닌 문자가 오게할 수있다.
+  //이것이 객체와 배열의 가장 큰 차이점.
+let grades = new object();
+grades['tank'] = 10;
+grades['tamk'] = 6;
+grades['tatank']= 70;
+
+
+
+//객체(2/3);객체와 반복문의 조우
+
+let arr = ['a','b','c'];
+arr
+for(let i = 0; i < arr.length; i ++){
+  console.log(arr[i]);
+}
+
+//배열에선 값을 순서대로 넣고 순서대로 뺀다.
+//그래서 넣고빼는 순서자체가 중요한 정보가 된다.
+//하지만 객체안에 저장된 값에는 순서가 없다.
+//단지 key와 value가 있을 뿐이다.
+
+let grades = {'tank' : 10, 'tamk' : 20, 'tatank' : 70};
+for(key in grades) {
+  console.log(key);
+}
+
+
+let grades = {'tank' : 10, 'tamk' : 20, 'tatank' : 70};
+for(key in grades) {
+  console.log(grades[key]);
+}
+
+
+let grades = {'tank' : 10, 'tamk' : 20, 'tatank' : 70};
+for(let name in grades) {
+  console.log("key : "+name+" value : "+grades[name]+"<br>");
+}
+
+//강력한 for in 문(생활코딩 said, to Use For in 문 is so powerful thinkg)
+let arr=['a', 'b', 'c'];
+for (let name in arr){
+  console.log(name);
+}
+
+for(let name in arr){
+  console.log(arr[name]);
+}
+
+
+//객체(1/3); 객체지향 프로그래밍
+//grades라는 변수안에 객체를 생성.
+  let grades = {
+    'list': { 'tank': 10, 'tamk': 20, 'tatank': 70 },  //리스트.라는 키값 안에 또 한 번 객체가 들어올 수 있다.
+    'show': function () {
+      for (let name in this.list) {
+        console.log(name, this.list[name]);   //this는 자바스크립트안에 미리 정해진 변수이다.
+      }                                       //여기서는 함수를 담고있는 grades를 가리키는 것이다.
+    }
+  }
+  grades.show();
+
+  </script>
+
+
+</body>
+</html>
